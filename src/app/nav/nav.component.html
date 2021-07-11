@@ -1,0 +1,132 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink='/home'>
+        <i class="material-icons">home</i>
+        Home
+      </a>
+	  <a mat-list-item href="#">
+        <i class="material-icons">business</i>
+        About Us
+      </a>
+	  <a mat-list-item href="#">
+        <i class="material-icons">shopping_basket</i>
+        Products
+      </a>
+      <a mat-list-item href="#">
+        <i class="material-icons">local_offer</i>
+        Offer/Schemes
+      </a>
+      <a mat-list-item href="#">
+        <i class="material-icons">account_circle</i>
+        My Account
+      </a>
+      <a mat-list-item routerLink='/edit_info'>
+        <i class="material-icons">contacts</i>
+        Contact
+      </a>
+      <a mat-list-item href="#">
+        <i class="material-icons">exit_to_app</i>
+        Logout
+      </a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+	  <div class="navbar-nav ml-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">User Account</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Login</a>
+                            <a href="#" class="dropdown-item">Register</a>
+                        </div>
+                    </div>
+                </div> 
+
+    </mat-toolbar>
+	
+	<div class="bottom-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <div class="logo">
+                    <br>
+                    <a href="index.html" class="logo-name">
+                        <b><span class="first">R</span>udra <span class="first">S</span>tore</b>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 sea">
+                <div class="search">
+                    <input type="text" placeholder="Search ...">
+                    
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="user">
+                    <a href="cart.html" class="btn cart" style="color: #000080;">
+                        <i class="material-icons"> shopping_cart</i>Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="footer-widget">
+                    <h2>Contact</h2>
+                    <dl>
+                        <p>Mr. Gururaj Vasantrao Yajurvedi - Proprietor</p>
+                        <p>“Vasantpuspa”, Plot No. 15, Ganesh Housing Society, Pandharpur Roada</p>
+                        <p>Miraj - 416410, Dist Sangli, Maharashtra, India</p>
+                        <p>gouriimpexmiraj@gmail.com , gouriimpexhelp@gmail.com</p>
+                        <p>Mobile : +91 9764996216 , +91 9503445526 , +91 9422493971</p>
+                        <p>Phone : 91-233-2223653</p>
+                    </dl>
+                </div>
+            </div>
+            <div class="col">
+                <div class="footer-widget">
+                    <h2>Quick Links</h2>
+                    <div class="contact-info">
+                        <p>Send Query</p>
+                        <p>Send SMS</p>
+                        <p>Call Me Free</p>
+						<p>Term & Conditions</p>
+						<p>Privacy Policy</p>
+						<p>We Are Social</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        
+    </div>
+</div>
+
+    
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
